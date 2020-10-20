@@ -22,14 +22,13 @@
 
 | Column          | Type       | Options                         |
 | --------------- | ---------- | ------------------------------- |
-| image           | text       | null: false                     |
-| item_name       | string     | null: false                     |
+| name            | string     | null: false                     |
 | detail          | text       | null: false                     |
-| category        | string     | null: false                     |
-| condition       | string     | null: false                     |
+| category        | integer    | null: false                     |
+| condition       | integer    | null: false                     |
 | delivery_charge | integer    | null: false                     |
-| prefecture      | string     | null: false                     |
-| delivery_date   | string     | null: false                     |
+| prefecture      | integer    | null: false                     |
+| delivery_date   | integer    | null: false                     |
 | price           | integer    | null: false                     |
 | user            | references | null: false,  foreign_key: true |
 
@@ -58,25 +57,25 @@
 | -------- | ---------- | ------------------------------ |
 | item     | references | null: false, foreign_key: true |
 | user     | references | null: false, foreign_key: true |
-| adress   | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :adress
+- has_one    :address
 
 # addresses テーブル
 
-| Column        | Type   | Options     |
-| ------------- | ------ | ----------- |
-| post_code     | string | null: false |
-| prefecture    | string | null: false |
-| city          | string | null: false |
-| house_number  | string | null: false |
-| building_name | string | null: false |
-| phone_number  | string | null: false |
+| Column        | Type       | Options                         |
+| ------------- | ---------- | ------------------------------- |
+| post_code     | string     | null: false                     |
+| prefecture    | integer    | null: false                     |
+| city          | string     | null: false                     |
+| house_number  | string     | null: false                     |
+| building_name | string     | null: false                     |
+| phone_number  | string     | null: false                     |
+| purchase      | references | null: false, foreign_key: true  |
 
 ### Association
 
-- has_one :purchase
+- belongs_to :purchase
