@@ -8,7 +8,9 @@
     <%= form_with local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
+  <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+  <% end %>
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
     <%# 出品画像 %>
