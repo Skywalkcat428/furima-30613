@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates_format_of :email, { with: EMAIL_REGEX, uniqueness: { case_sensitive: false }}
+  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
+  validates_format_of :email, { with: EMAIL_REGEX, uniqueness: { case_sensitive: false } }
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d{6,}]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX
@@ -14,18 +14,17 @@ class User < ApplicationRecord
     validates :last_name
     validates :first_name
   end
-  
+
   with_options presence: true, format: { with: /\A[ァ-ヶー－]+\z/ } do
     validates :last_name_kana
     validates :first_name_kana
   end
-  
+
   with_options presence: true do
-    validates :nickname #, length: { maximum: 40 }
+    validates :nickname # , length: { maximum: 40 }
     validates :birth_date
   end
 
   has_many :purchases
   has_many :items
-
 end
