@@ -20,11 +20,12 @@ class User < ApplicationRecord
     validates :first_name_kana
   end
   
-  with_options presence: true
-    validates :nickname
+  with_options presence: true do
+    validates :nickname #, length: { maximum: 40 }
     validates :birth_date
   end
 
   has_many :purchases
   has_many :items
+
 end
