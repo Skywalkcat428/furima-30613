@@ -21,7 +21,7 @@ class User < ApplicationRecord
   end
 
   with_options presence: true do
-    validates :nickname # , length: { maximum: 40 }
+    validates :nickname
     validates :birth_date
   end
 
