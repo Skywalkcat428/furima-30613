@@ -11,6 +11,13 @@ class ItemsController < ApplicationController
     Item.create(item_params)
   end
 
+  # def edit
+  # end
+
+  # def update
+  #   current_user.update(item_params)
+  # end
+
   private
 
   def item_params
