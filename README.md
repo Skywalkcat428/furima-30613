@@ -34,9 +34,12 @@
 
 ### Association
 
-- belongs_to :user
-- has_many   :comments
-- has_one    :purchase
+- belongs_to       :user
+- has_many         :comments
+- has_one          :purchase
+- has_one_attached :image
+
+
 
 ## comments テーブル
 

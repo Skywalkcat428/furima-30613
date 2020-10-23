@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  has_one_attached :image
   belongs_to_active_hash :category,
 
   #空の投稿を保存できないようにする
