@@ -39,8 +39,6 @@
 - has_one          :purchase
 - has_one_attached :image
 
-
-
 ## comments テーブル
 
 | Column  | Type       | Options                        |
