@@ -11,8 +11,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.image.attached? 
-      @item.save
+    if @item.save
       redirect_to items_path(@item)
     else
       render :new
