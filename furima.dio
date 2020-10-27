@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-10-20T02:56:14.105Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="axngRGGzcEZsjqvSzf3o" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-10-23T03:41:54.167Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="umwBgMcSsybX97g2FJKG" version="13.6.5">
     <diagram id="W0z2wTmEk56Bw0OaEFaE" name="ページ1">
-        <mxGraphModel dx="1011" dy="714" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="690" dy="516" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -45,7 +45,7 @@
                 <mxCell id="97" value="- postal_code（郵便番号）&#10;&#10;- prefecture_id（都道府県）&#10;&#10;- city（市区町村）&#10;&#10;- house_number（番地）&#10;&#10;- building_name（建物名）&#10;&#10;- phone number（電話番号）&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="96" vertex="1">
                     <mxGeometry y="30" width="160" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="108" value="" style="endArrow=ERone;html=1;rounded=0;entryX=0.008;entryY=0.86;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endFill=0;entryPerimeter=0;exitX=1;exitY=0.099;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" target="32" edge="1" source="27">
+                <mxCell id="108" value="" style="endArrow=ERone;html=1;rounded=0;entryX=0.008;entryY=0.86;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endFill=0;entryPerimeter=0;exitX=1;exitY=0.099;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="27" target="32" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="580" y="160" as="sourcePoint"/>
                         <mxPoint x="680" y="180" as="targetPoint"/>
