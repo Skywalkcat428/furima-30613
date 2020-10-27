@@ -61,7 +61,7 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
-      it '価格が¥300未満だと登録できない' do
+      it '価格が¥9999999より高いと登録できない' do
         @item.price = 19999999
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
