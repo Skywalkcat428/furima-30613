@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @items = Item.order('created_at DESC')
@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if item.image.attached? 
+    if @item.image.attached? 
       @item.save
       redirect_to root_path
     else
@@ -19,12 +19,19 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def edit
-  # end
+  def show
+    @item = Item.find(params[:id])
+    # if @item.image.attached? 
+    # end
+  end
 
-  # def update
+  def edit
+    # @item = Item.find(params[:id])
+  end
+
+  def update
   #   current_user.update(item_params)
-  # end
+  end
 
   private
 
