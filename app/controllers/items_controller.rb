@@ -21,17 +21,15 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    # if @item.image.attached? 
-    # end
   end
 
-  def edit
-    # @item = Item.find(params[:id])
-  end
+  # def edit
+  #   # @item = Item.find(params[:id])
+  # end
 
-  def update
-  #   current_user.update(item_params)
-  end
+  # def update
+  # #   current_user.update(item_params)
+  # end
 
   private
 
