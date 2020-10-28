@@ -30,7 +30,6 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      @item.save
       return redirect_to item_path
     else
       return render :edit
