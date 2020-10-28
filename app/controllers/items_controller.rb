@@ -11,11 +11,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.image.attached? 
-      @item.save
+    if @item.save
       redirect_to root_path
     else
-      render :new
+      return render :new
     end
   end
 
@@ -23,13 +22,22 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  # def edit
-  #   # @item = Item.find(params[:id])
-  # end
+  def edit
+    @item = Item.find(params[:id])
+    unless current_user == @item.user
+      redirect_to root_path
+    end
+  end
 
-  # def update
-  # #   current_user.update(item_params)
-  # end
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    if @item.save
+      return redirect_to item_path
+    else
+      return render :edit
+    end
+  end
 
   private
 
