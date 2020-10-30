@@ -52,7 +52,7 @@
 - belongs_to :user
 - belongs_to :prototype
 
-## purchases テーブル
+## purchasers テーブル
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
@@ -79,4 +79,4 @@
 
 ### Association
 
-- belongs_to :purchase
+- belongs_to :purchaser
