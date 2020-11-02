@@ -1,24 +1,17 @@
 class OrderAddress
   include ActiveModel::Model
-  attr_accessor :post_code, :order_id, :city, :house_number, :building_name, :phone_number, :purchase
-  attr_accessor :item, :user
-
-  # extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to_active_hash :prefecture
+  attr_accessor :post_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :order_id, :item_id, :user_id
 
   with_options presence: true do
-    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
-    validates :prefecture, numericality: { other_than: 1 } 
+    validates :post_code,     format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
+    validates :prefecture_id, numericality: { other_than: 1 } 
     validates :city
     validates :house_number
-    validates :phone_number, format: { with: /\A[0-9]+\z/ }
-    validates :order
-
-    validates :item
-    validates :user
+    validates :phone_number,  format: { with: /\A[0-9]+\z/ }
   end
 
   def save
-    user = User.create()
+    order = Order.create(item_id: item_id, user_id: user_id)
+    address = Address.create(post_code: post_code, prefecture_id: prefecture_id, city: city, house_number: house_number, building_name: building_name, phone_number: phone_number, order_id: order.id)
   end
 end  
