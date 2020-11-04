@@ -69,7 +69,7 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Token can't be blank")
       end
-      it '購入者が空では保存ができないこと' do
+      it '出品者が空では保存ができないこと' do
         @item.user_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include('User must exist')
@@ -79,7 +79,7 @@ RSpec.describe OrderAddress, type: :model do
         @order.valid?
         expect(@order.errors.full_messages).to include('Item must exist')
       end
-      it '出品者が空では保存ができないこと' do
+      it '購入者が空では保存ができないこと' do
         @order.user_id = nil
         @order.valid?
         expect(@order.errors.full_messages).to include('User must exist')
